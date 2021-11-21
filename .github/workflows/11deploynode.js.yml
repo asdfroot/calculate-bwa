@@ -41,10 +41,7 @@ jobs:
          key: ${{ secrets.SSH_PRIVATE_KEY }}
          port: 22
          script: |
-          cd ~/app/example-ci-cd-auto-deploy-vps
-          git pull origin master
-          git status
-          yarn install
-          yarn build
-          pm2 reload PertakinaPublicClient
-          pm2 restart PertakinaPublicClient
+            cd ~/apps/calculate-bwa
+            git pull origin master
+            ~/.nvm/versions/node/v12.19.0/bin/npm install
+            ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
